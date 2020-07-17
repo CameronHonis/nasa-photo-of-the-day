@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import Home from './Home.js'
 import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
-    </div>
-  );
+  let [page, setPage] = useState('home')
+  useEffect(() => {
+    console.log('a')
+  },[])
+  if (page === '' || page === 'home'){
+
+    return (
+      <>
+        <Home></Home>
+      </>
+    )
+  } else {
+    return (<p>not home page</p>)
+  }
+  
 }
 
 export default App;
